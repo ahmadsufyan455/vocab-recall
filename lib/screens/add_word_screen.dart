@@ -49,7 +49,9 @@ class _AddWordScreenState extends State<AddWordScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+              Theme.of(
+                context,
+              ).colorScheme.primaryContainer.withValues(alpha: 0.3),
               Theme.of(context).colorScheme.surface,
             ],
           ),

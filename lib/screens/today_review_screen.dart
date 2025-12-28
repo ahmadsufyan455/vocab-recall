@@ -74,7 +74,9 @@ class _TodayReviewScreenState extends State<TodayReviewScreen> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+                Theme.of(
+                  context,
+                ).colorScheme.primaryContainer.withValues(alpha: 0.3),
                 Theme.of(context).colorScheme.surface,
               ],
             ),
@@ -125,7 +127,9 @@ class _TodayReviewScreenState extends State<TodayReviewScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+              Theme.of(
+                context,
+              ).colorScheme.primaryContainer.withValues(alpha: 0.3),
               Theme.of(context).colorScheme.surface,
             ],
           ),
@@ -150,7 +154,7 @@ class _TodayReviewScreenState extends State<TodayReviewScreen> {
                           Theme.of(context).colorScheme.primaryContainer,
                           Theme.of(
                             context,
-                          ).colorScheme.primaryContainer.withOpacity(0.7),
+                          ).colorScheme.primaryContainer.withValues(alpha: 0.7),
                         ],
                       ),
                     ),

@@ -45,7 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+              Theme.of(
+                context,
+              ).colorScheme.primaryContainer.withValues(alpha: 0.3),
               Theme.of(context).colorScheme.surface,
             ],
           ),
@@ -72,7 +74,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: const Icon(Icons.quiz_rounded),
                       label: const Text(
                         'Review Today',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 20),
@@ -90,7 +95,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: const Icon(Icons.add_circle_outline_rounded),
                       label: const Text(
                         'Add New Word',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 20),
@@ -108,7 +116,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             Icon(
                               Icons.celebration_rounded,
                               size: 48,
-                              color: Theme.of(context).colorScheme.onSecondaryContainer,
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSecondaryContainer,
                             ),
                             const SizedBox(height: 12),
                             Text(
@@ -116,7 +126,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Theme.of(context).colorScheme.onSecondaryContainer,
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.onSecondaryContainer,
                               ),
                             ),
                             const SizedBox(height: 16),
@@ -124,18 +136,30 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: double.infinity,
                               child: ElevatedButton.icon(
                                 onPressed: () async {
-                                  await Navigator.pushNamed(context, '/day7-test');
+                                  await Navigator.pushNamed(
+                                    context,
+                                    '/day7-test',
+                                  );
                                   _checkDay7Condition();
                                 },
                                 icon: const Icon(Icons.assignment_rounded),
                                 label: const Text(
                                   'Take Day 7 Test',
-                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Theme.of(context).colorScheme.secondary,
-                                  foregroundColor: Theme.of(context).colorScheme.onSecondary,
-                                  padding: const EdgeInsets.symmetric(vertical: 16),
+                                  backgroundColor: Theme.of(
+                                    context,
+                                  ).colorScheme.secondary,
+                                  foregroundColor: Theme.of(
+                                    context,
+                                  ).colorScheme.onSecondary,
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 16,
+                                  ),
                                 ),
                               ),
                             ),

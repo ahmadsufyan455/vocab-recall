@@ -40,7 +40,9 @@ class _Day7TestScreenState extends State<Day7TestScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.3),
+              Theme.of(
+                context,
+              ).colorScheme.secondaryContainer.withValues(alpha: 0.3),
               Theme.of(context).colorScheme.surface,
             ],
           ),
