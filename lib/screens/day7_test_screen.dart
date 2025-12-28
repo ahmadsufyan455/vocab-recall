@@ -13,6 +13,7 @@ class _Day7TestScreenState extends State<Day7TestScreen> {
 
   Future<void> _completeTest() async {
     await setLastDay7TestCompletedAt(DateTime.now());
+    await resetDatabaseForNewCycle();
     if (mounted) {
       Navigator.pop(context);
     }

@@ -133,3 +133,10 @@ Future<DateTime?> getCycleStartDate() async {
   }
   return await getFirstWordCreatedAt();
 }
+
+Future<void> resetDatabaseForNewCycle() async {
+  final db = await openDb();
+  await db.delete('words');
+  await db.delete('reviews');
+  // Keep app_settings intact so the cycle tracking continues
+}

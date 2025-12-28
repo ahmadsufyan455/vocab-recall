@@ -1,6 +1,6 @@
 name: vocabulary_recall
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -21,11 +21,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/memory-recall.png
+    - assets/call-back.png
 
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/memory-recall.png"
+  image_path: "assets/call-back.png"
   adaptive_icon_background: "#43A047"
-  adaptive_icon_foreground: "assets/memory-recall.png"
+  adaptive_icon_foreground: "assets/call-back.png"
