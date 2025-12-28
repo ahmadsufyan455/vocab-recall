@@ -1,5 +1,6 @@
-package com.example.vocabulary_recall
+package com.zerodev.recall
 
 import io.flutter.embedding.android.FlutterActivity
 
 class MainActivity : FlutterActivity()
+
