@@ -59,12 +59,15 @@ Future<void> insertWord(String word, String meaning) async {
 Future<List<Map<String, dynamic>>> getWords() async {
   final db = await openDb();
   return db.rawQuery('''
-    SELECT w.id, w.word, w.meaning
+    SELECT DISTINCT w.id, w.word, w.meaning
       FROM words w
-      LEFT JOIN reviews r
-        ON w.id = r.word_id
-      WHERE r.id IS NULL
-        OR r.next_review_date <= DATE('now')
+      LEFT JOIN (
+        SELECT word_id, MAX(next_review_date) as latest_next_review_date
+        FROM reviews
+        GROUP BY word_id
+      ) r ON w.id = r.word_id
+      WHERE r.latest_next_review_date IS NULL
+        OR r.latest_next_review_date <= DATE('now')
   ''');
 }
 
@@ -79,6 +82,10 @@ Future<void> submitReview(int wordId) async {
   final tomorrowDate =
       "${tomorrow.year}-${tomorrow.month.toString().padLeft(2, '0')}-${tomorrow.day.toString().padLeft(2, '0')}";
 
+  // Delete any existing reviews for this word to avoid duplicates
+  await db.delete('reviews', where: 'word_id = ?', whereArgs: [wordId]);
+
+  // Insert new review record
   await db.insert('reviews', {
     'word_id': wordId,
     'reviewed_at': todayDate,
